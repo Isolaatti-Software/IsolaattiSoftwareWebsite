@@ -1,0 +1,21 @@
+﻿.isolaatti-full-logo {
+    margin: auto;
+    font-family: 'Zen Dots', serif;
+    color: #eddff6;
+    text-shadow: -3px 4px #6529a4;
+    text-decoration: none;
+    text-align: center;
+    /*filter: drop-shadow(-10px 16px 50px rgb(62, 0, 99));*/
+}
+.font-orange {
+    color: #b47d2d;
+}
+.font-pink {
+     color: #af4eb4;
+ }
+.font-blue {
+    color: #31409b;
+}
+.font-green {
+    color: darkolivegreen;
+}

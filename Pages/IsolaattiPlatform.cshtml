@@ -1,0 +1,110 @@
+﻿@page "/isolaatti"
+@model IsolaattiSoftwareWebsite.Pages.IsolaattiPlatform
+
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "Red Isolaatti";
+}
+@section css
+{
+    <link rel="stylesheet" href="~/css/isolaatti.css"/>
+}
+<div class="hero is-medium is-black">
+    <div class="hero-body">
+        <div class="columns">
+            <div class="column is-flex is-flex-direction-column is-align-content-center">
+                <div class="isolaatti-full-logo section is-size-1">
+                    Isolaatti
+                </div>
+                <div class="buttons is-centered">
+                    <a href="#" class="button is-light is-outlined">Registrate</a>
+                    <a href="#" class="button is-light is-outlined">Inicia sesión</a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="section is-size-1 is-flex is-justify-content-center is-flex-wrap-wrap">
+                    <span>#</span>
+                    <span class="font-orange">ellos</span><br/>
+                    <span class="font-pink">te</span><br/>
+                    <span class="font-blue">escuchan</span><br/>
+                    <span class="font-green">fuerte</span><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section is-flex is-flex-direction-column is-align-items-center">
+    <span class="is-size-2"><i class="fa-solid fa-face-laugh-beam"></i></span>
+    <span class="is-size-1 has-text-weight-light mt-5 topic2">Solo talk, no show up...</span>
+    <p class="font-weight-light mt-2">
+        Rompe tus dedos y revienta tu garganta antes de usar la cámara <i class="fa-solid fa-skull-crossbones"></i>
+    </p>
+</div>
+
+<div class="hero is-light">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="is-flex is-flex-direction-column">
+                        <div class="has-text-weight-light is-size-4 has-text-centered"><i class="fa-brands fa-markdown"></i></div>
+                        <p class="has-text-centered">Texto con el poder <i>formateador</i> de Markdown</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="is-flex is-flex-direction-column">
+                        <div class="has-text-weight-light is-size-4 has-text-centered"><i class="fa-solid fa-microphone"></i></div>
+                        <p class="has-text-centered">Tu voz presente siempre que quieras</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="is-flex is-flex-direction-column">
+                        <div class="has-text-weight-light is-size-4 has-text-centered"><i class="fa-solid fa-people-group"></i></div>
+                        <p class="has-text-centered">Squads: comunidades</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hero is-info">
+    
+    
+    <div class="hero-body">
+        <div class="section is-flex is-flex-direction-column is-align-items-center">
+            <span class="is-size-2"><i class="fa-solid fa-code"></i></span>
+            <span class="is-size-1 has-text-weight-light mt-5 topic2">Código abierto y gratis</span>
+            <p class="font-weight-light mt-2">
+                Todos los componentes son código abierto, y se ofrece en la medida de lo posible acceso gratuito a la implementación pública de la plataforma.
+            </p>
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="https://github.com/Isolaatti-Software/IsolaattiWebsite" class="button is-light is-outlined is-large">
+                <span class="icon"><i class="fa-brands fa-github"></i></span>
+                <span>Ir al repositorio de código</span>
+            </a>
+            <a href="#" class="button is-light is-outlined is-large">
+                <span class="icon">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
+                <span>Ir a la plataforma </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="section is-flex is-flex-direction-column is-align-items-center">
+    <span class="is-size-2"><i class="fa-solid fa-building"></i></span>
+    <span class="is-size-1 has-text-weight-light mt-5 topic2">Obtenga Isolaatti para su negocio</span>
+    <p class="font-weight-light mt-2">
+        Ofrecemos implementaciones independientes para que pueda tener el control. Puede utilizarlo para su empresa, escuela o comunidad.
+    </p>
+    <div class="is-flex is-justify-content-center section">
+        <a asp-page="/Contact" asp-route-reference="isolaatti" class="button is-black is-outlined is-large">
+            <span>Solicite informes</span>
+        </a>
+    </div>
+</div>

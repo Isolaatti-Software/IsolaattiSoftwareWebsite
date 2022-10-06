@@ -1,0 +1,64 @@
+﻿@page "/privacidad/eliminar_info"
+@model IsolaattiSoftwareWebsite.Pages.DeleteMyInfo
+
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "Eliminen mi información";
+}
+
+@if (Model.Success)
+{
+    <div class="container section">
+        <div class="section">
+            <h1 class="title">Ya está, revise su buzón de correo.</h1>
+            <p>Hemos enviado un enlace secreto a su correo. Si no lo encuentra revise su bandeja de correo no deseado.</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container section">
+        <div class="section">
+            <h1 class="title">Eliminen mi información</h1>
+            <div class="message">
+                <div class="message-body">
+                    <p>Si usted ha enviado un formulario, y desea que sus datos sean eliminados, ingrese el correo que utilizó
+                        en el formulario, le enviaremos un enlace secreto para que pueda eliminar sus datos.</p>
+                </div>
+            </div>
+            <div class="section">
+                <form method="post">
+                    <div class="field">
+                        <label class="field-label">Correo electrónico</label>
+                        <div class="control has-icons-left has-icons-right">
+                            @if (Model.FormInvalid)
+                            {
+                                <input class="input is-danger" type="email" asp-for="EmailAddress">
+                            }
+                            else
+                            {
+                                <input class="input" type="email" asp-for="EmailAddress">
+                            }
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            @if (Model.FormInvalid)
+                            {
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                            }
+                        </div>
+                        @if (Model.FormInvalid)
+                        {
+                            <p class="help is-danger">Dirección de correo no válida</p>
+                        }
+                    </div>
+                    <div class="is-flex is-justify-content-end">
+                        <button class="button is-primary" type="submit">Continuar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

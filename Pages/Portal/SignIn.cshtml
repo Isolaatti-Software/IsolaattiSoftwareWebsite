@@ -1,0 +1,60 @@
+﻿@page "/clientes/login"
+@model IsolaattiSoftwareWebsite.Pages.Portal.SignIn
+
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "Portal de clientes";
+}
+
+<div class="column section">
+    <div class="container">
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column section">
+                <h1 class="title">
+                    Clientes de Isolaatti Software
+                </h1>
+                <h2 class="subtitle">
+                    Inicie sesión con su cuenta de cliente
+                </h2>
+                <div class="message is-info">
+                    <div class="message-header">En construcción</div>
+                    <div class="message-body">
+                        El portal de clientes aun no está disponible.
+                    </div>
+                </div>
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Inicie sesión
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <form>
+                                <div class="field">
+                                    <label for="username" class="field-label">
+                                        Correo
+                                    </label>
+                                    <div class="control">
+                                        <input class="input" id="username" type="email" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="password" class="field-label">
+                                        Contraseña
+                                    </label>
+                                    <div class="control">
+                                        <input class="input" id="password" type="password" disabled="disabled"/>
+                                    </div>
+                                </div>
+                                <button type="submit" class="button is-primary is-fullwidth" disabled="disabled">Inicie sesión</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Isolaatti Software</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    @await RenderSectionAsync("css", required: false)
+</head>
+<body>
+
+<nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" id="isolaatti_brand" href="/">
+      
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbar" class="navbar-menu">
+    <div class="navbar-end">
+      
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Productos
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" asp-page="/IsolaattiPlatform">Red Isolaatti</a>
+        </div>
+      </div>
+      <a class="navbar-item" asp-page="/OpenSource">
+        Código abierto
+      </a>
+      <a class="navbar-item" asp-page="/DevelopmentService">
+        Soluciones
+      </a>
+      <a class="navbar-item" href="https://blog.isolaattisoftware.com.mx">
+        Blog <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+      </a>
+
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button has-background-black has-text-light" asp-page="/Portal/SignIn">
+            <strong>Portal de clientes</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<main class="is-marginless" id="app">
+  @RenderBody()
+</main>
+
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="https://kit.fontawesome.com/fde197fc03.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿@page "/aviso_de_privacidad"
+@model IsolaattiSoftwareWebsite.Pages.PrivacyPolicy
+
+@{
+    Layout = "Shared/_Layout";
+    ViewData["Title"] = "Aviso de privacidad";
+}
+<style>.p {margin-bottom: 1em}</style>
+
+<div class="container section">
+    <div class="section">
+        <h1 class="title">Aviso de privacidad</h1>
+        <p class="p has-text-justified">
+            Este aviso de privacidad aplica para el formulario "Cuéntenos su situación".
+        </p>
+        <p class="p has-text-justified">Los datos que usted proporcione a Erik Cavazos por medio de este sitio web, son de caracter privado y serán 
+            protegidos. Estos datos unicamente se ponen a disposición de personal interno y se maneja respetando 
+            su privacidad. No se divulgará ni se transferirá bajo ninguna circunstancia su información.
+        </p>
+        <p class="p has-text-justified">
+            Los datos proporcionados incluyen su nombre y apellidos, su dirección de correo, y cualquier cosa que 
+            haya mencionado en el apartado "Cuéntenos". Únicamente se utilizarán dichos datos para ponernos en contacto
+            con usted con respecto a la solicitud de un servicio. Al usted enviar el formulario, está de acuerdo que lo 
+            contactaremos por el correo proporcionado.
+        </p>
+        <p class="p has-text-justified">
+            Puede solicitar que se elimine todo rastro de información que haya enviado al sitio web. Vaya a 
+            <a asp-page="/DeleteMyInfo">eliminen mi información</a> para hacerlo.
+        </p>
+    </div>
+</div>
