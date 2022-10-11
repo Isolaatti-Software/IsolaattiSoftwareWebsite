@@ -4,20 +4,58 @@
   Layout = "Shared/_Layout";
   ViewData["Title"] = "Inicio";
 }
+@section metadata
+{
+      <meta property="og:url" content="https://isolaattisoftware.com.mx"/>
+      <meta proerty="og-title" content="Isolaatti Software"/>
+}
 
-<section class="hero is-large has-background-black">
+<section class="hero is-large has-background-white" style="background-image: url('images/pexels-tyler-lastovich-699122.jpg'); background-blend-mode: darken; background-size: cover;">
   
+  <div class="section">
+    <div class="hero-body">
+        <p class="title has-text-light is-size-1-desktop is-size-2-tablet">
+          Isolaatti Software
+        </p>
+        <p class="subtitle has-text-light is-size-3-desktop is-size-4-tablet">
+          Logremos algo increíblemente maravilloso
+        </p>
+        <p>
+          <a class="button is-link is-size-4-desktop" asp-page="/Contact">
+            Cuéntenos de su proyecto
+          </a>
+        </p>
+      </div>
+  </div>
+</section>
+
+<div class="section container">
+  <div class="section">
+    <h2 class="title has-text-weight-light has-text-centered">Conversores de sueños en realidades</h2>
+    <p class="has-text-centered">
+      Nosotros compartimos con usted la premisa de que los sueños pueden ser realizados, por lo tanto su sueño puede convertirse en el nuestro.
+    </p>
+  </div>
+</div>
+
+<div class="hero is-large" style="background-image: url('images/pexels-markus-spiske-360591.jpg'); background-color:#6529a4; background-blend-mode:  saturation; background-size: cover;">
   <div class="hero-body">
-    <p class="title has-text-light is-size-1-desktop is-size-2-tablet">
-      Isolaatti Software
+    <p class="title has-text-light is-size-1-desktop is-size-2-tablet has-text-centered">
+      Nos presentamos
     </p>
-    <p class="subtitle has-text-light is-size-3-desktop is-size-4-tablet">
-      Apasionados por ser la cúspide del desarrollo de software y la innovación
+    <p class="subtitle has-text-light is-size-3-desktop is-size-4-tablet has-text-centered">
+      Apasionados y entusiastas de la tecnología que creen en su idea
     </p>
-    <p>
+  </div>
+</div>
+
+<div class="section container">
+  <div class="section">
+    <h2 class="title has-text-weight-light has-text-centered">Hagamos de esto una realidad</h2>
+    <p class="has-text-centered">
       <a class="button is-link is-size-4-desktop" asp-page="/Contact">
-        Cuéntenos de su proyecto
+        Contáctenos
       </a>
     </p>
   </div>
-</section>
+</div>

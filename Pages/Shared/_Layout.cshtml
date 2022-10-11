@@ -4,6 +4,12 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Isolaatti Software</title>
+    
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://isolaattisoftware.com.mx/banner.png"/>
+    <meta property="og:description" content="Isolaatti Software: Apasionados por ser la cúspide del desarrollo de software y la innovación"/>
+    @await RenderSectionAsync("metadata", false)
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="~/css/site.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
@@ -11,7 +17,7 @@
 </head>
 <body>
 
-<nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-white is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" id="isolaatti_brand" href="/">
       
