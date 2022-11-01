@@ -1,0 +1,27 @@
+﻿@page
+@model IsolaattiSoftwareWebsite.Pages.Admin.Index
+
+@{
+    Layout = "Shared/_LayoutAdmin";
+}
+@section Scripts
+{
+    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+    <script src="~/js/admin/clientsComponent.js"></script>
+    <script src="~/js/admin/messagesComponent.js"></script>
+    <script src="~/js/admin/blogComponent.js"></script>
+    <script src="~/js/admin/admin.js"></script>
+}
+<div class="section">
+    <h1 class="title">
+        Administración
+    </h1>
+    <div class="tabs is-centered">
+        <ul>
+            <li :class="{'is-active': $route.path==='/'}"><router-link to="/">Clientes</router-link></li>
+            <li :class="{'is-active': $route.path==='/messages'}"><router-link to="/messages">Mensajes</router-link></li>
+            <li :class="{'is-active': $route.path==='/blog'}"><router-link to="/blog">Blog</router-link></li>
+        </ul>
+    </div>
+    <router-view/>
+</div>
