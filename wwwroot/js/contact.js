@@ -102,10 +102,10 @@
             }
         },
         isValid: function() {
-            return this.formValidation.name.isValid && 
-                this.formValidation.lastName.isValid && 
-                this.formValidation.email.isValid && 
-                this.formValidation.subject.isValid && 
+            return this.formValidation.name.isValid &&
+                this.formValidation.lastName.isValid &&
+                this.formValidation.email.isValid &&
+                this.formValidation.subject.isValid &&
                 this.formValidation.message.isValid;
         }
     },
@@ -113,12 +113,12 @@
     <div class="column">
         <div class="columns">
             <div class="column"></div>
-           
+
             <div class="column">
                 <div class="section">
                     <h1 class="title">Contáctenos</h1>
                     <p>
-                        Rellene el formulario para realizar un primer contacto con nosotros. Le contactaremos para 
+                        Rellene el formulario para realizar un primer contacto con nosotros. Le contactaremos para
                         informarle sobre el estado de su solicitud.
                     </p>
                 </div>
@@ -208,12 +208,11 @@
                                 <button class="button is-primary" :class="{'is-loading': submitting}" @click="submit">Reintentar</button>
                            </div>
                         </div>
-                       
                     </article>
                 </div>
             </div>
              <div class="column">
-                
+
             </div>
        </div>
     </div>
@@ -223,12 +222,12 @@
 new Vue({
     el: "#app",
     data: {
-        
+
     },
     methods: {
-        
+
     },
     computed: {
-        
+
     }
 });

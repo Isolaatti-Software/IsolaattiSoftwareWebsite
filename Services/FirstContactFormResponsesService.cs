@@ -26,6 +26,24 @@ public class FirstContactFormResponsesService : IFirstContactFormResponses
         return await _contactUsCollection.Find(doc => doc.Email.Equals(emailAddress)).Limit(100).ToListAsync();
     }
 
+    public async Task<IEnumerable<ContactUs>> GetFirstContact(string? lastId, int count)
+    {
+        if (lastId == null)
+        {
+            return await _contactUsCollection
+                .Find(doc => true)
+                .SortByDescending(doc => doc.Id)
+                .Limit(count)
+                .ToListAsync();
+        }
+        var filter = Builders<ContactUs>.Filter.Gt("id", lastId);
+        return await _contactUsCollection
+            .Find(filter)
+            .SortByDescending(doc => doc.Id)
+            .Limit(count)
+            .ToListAsync();
+    }
+
     public bool ValidateForm(ContactUs contactUsObj)
     {
         if (contactUsObj.Name.Length < 1)

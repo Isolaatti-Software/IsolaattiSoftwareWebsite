@@ -7,13 +7,25 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
 <head>
-    <title></title>
+    <title>Inicio de sesión - Administración Isolaatti Software</title>
 </head>
 <body>
+@if (Model.ValidationErrors)
+{
+    <p>Hay errores de validación</p>
+}
 <div>
-    
+    <form method="post">
+        <label for="email">Correo electronico</label>
+        <input id="email" asp-for="UserName" type="text"/>
+
+        <label for="password">Contraseña</label>
+        <input id="password" asp-for="Password" type="password"/>
+
+        <input type="submit"/>
+    </form>
 </div>
 </body>
 </html>

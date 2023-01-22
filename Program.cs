@@ -1,9 +1,20 @@
 using IsolaattiSoftwareWebsite;
+using IsolaattiSoftwareWebsite.Model;
 using IsolaattiSoftwareWebsite.Services;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Identity;
 using SendGrid.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+    .AddMongoDbStores<ApplicationUser, ApplicationRole, Guid>(
+        Environment.GetEnvironmentVariable("MONGO") ?? "mongodb://localhost:27017", "isolaattisoftware-db");
+
+builder.Services.AddAuthorization().ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Admin/SignIn";
+});
 
 // Add services to the container.
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -19,8 +30,12 @@ builder.Services.AddScoped<IDeleteMyInformationService, DeleteMyInformationServi
 
 // For production the environment variable must be set
 builder.Services.Configure<MongoConfiguration>(config =>
-        config.ConnectionString =
-            Environment.GetEnvironmentVariable("MONGO") ?? "mongodb://localhost:27017");
+{
+    config.ConnectionString =
+        Environment.GetEnvironmentVariable("MONGO") ?? "mongodb://localhost:27017";
+    config.DbName = "isolaattisoftware-db";
+});
+
 
 var app = builder.Build();
 
@@ -41,12 +56,40 @@ if (!app.Environment.IsDevelopment())
 
 
 app.UseStaticFiles();
-
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapRazorPages();
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    // Here check if there is no user. If so create a new one with default credentials
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+    var rolesManager = scope.ServiceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
+
+    if (!await rolesManager.RoleExistsAsync("admin"))
+    {
+        await rolesManager.CreateAsync(new ApplicationRole { Name = "admin" });
+    }
+
+    if (!userManager.Users.Any())
+    {
+        var defaultUser = new ApplicationUser
+        {
+            UserName = "admin",
+            Email = "admin@isolaatti.com"
+        };
+
+        var userCreationResult = await userManager.CreateAsync(defaultUser, "98h87guKuyg-?");
+
+        foreach (var error in userCreationResult.Errors)
+        {
+            Console.WriteLine(error.Description);
+        }
+
+        await userManager.AddToRoleAsync(defaultUser, "admin");
+    }
+}
 app.Run();

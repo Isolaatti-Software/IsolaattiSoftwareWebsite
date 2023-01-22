@@ -1,0 +1,33 @@
+@page
+@model IsolaattiSoftwareWebsite.Pages.Admin.EmailProfile
+
+@{
+    Layout = "Shared/_LayoutAdmin";
+    
+}
+
+<div class="section">
+    <h1 class="title">Perfil de email</h1>
+    <h2 class="subtitle">@ViewData["email"]</h2>
+</div>
+
+<div class="section">
+    <a asp-page="/Admin/ClientAccountCreation" asp-route-email="@ViewData["email"]" class="button">
+        Crear perfil de cliente
+    </a>
+</div>
+
+<div class="section">
+    <h2 class="subtitle">Mensajes recibidos</h2>
+    
+    @foreach (var message in Model.ContactUsEnumerable)
+    {
+        <div class="card">
+            <div class="card-content">
+                <p><strong>@message.Name @message.LastName</strong></p>
+                <p><a href="mailto:@message.Email">@message.Email</a></p>
+                <p>@message.Message</p>
+            </div>
+        </div>
+    }
+</div>

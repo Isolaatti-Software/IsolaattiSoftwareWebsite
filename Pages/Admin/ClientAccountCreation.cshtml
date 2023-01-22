@@ -1,0 +1,63 @@
+@page
+@model IsolaattiSoftwareWebsite.Pages.Admin.ClientAccountCreation
+
+@{
+    Layout = "Shared/_LayoutAdmin";
+    ViewData["Title"] = "Creación de cuenta de cliente";
+}
+
+<div class="section">
+    <h1 class="title">Creación de nueva cuenta de cliente</h1>
+
+    <form method="post">
+        <div class="section">
+            <h2 class="subtitle">Datos de identificación</h2>
+            <div class="field">
+                <label class="field-label">Nombre(s)</label>
+                <div class="control has-icons-right">
+                    <input type="text" class="input" asp-for="ClientAccountCreationData.FirstName">
+                </div>
+            </div>
+            <div class="field">
+                <label class="field-label">Apellidos</label>
+                <div class="control has-icons-right">
+                    <input type="text" class="input" asp-for="ClientAccountCreationData.LastName">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="subtitle">Datos de contacto</h2>
+            <div class="field">
+                <label class="field-label">Dirección de correo electrónico</label>
+                <div class="control has-icons-right">
+                    <input type="email" class="input" asp-for="ClientAccountCreationData.Email">
+                </div>
+            </div>
+            <div class="field">
+                <label class="field-label">Numero de teléfono</label>
+                <div class="control has-icons-right">
+                    <input type="tel" class="input" asp-for="ClientAccountCreationData.PhoneNumber">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2 class="subtitle">Dirección</h2>
+            <div class="field">
+                <label class="field-label">Colonia</label>
+                <div class="control has-icons-right">
+                    <input type="text" class="input" asp-for="ClientAccountCreationData.Address1">
+                </div>
+            </div>
+            <div class="field">
+                <label class="field-label">Municipio, Estado</label>
+                <div class="control has-icons-right">
+                    <input type="text" class="input" asp-for="ClientAccountCreationData.Address2">
+                </div>
+            </div>
+        </div>
+        <div class="section is-flex">
+            <button class="button is-primary" type="submit">Crear</button>
+        </div>
+    </form>
+</div>
